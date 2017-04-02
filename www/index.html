@@ -1,0 +1,60 @@
+
+<html>
+	<head>
+		<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
+		<meta name="format-detection" content="telephone=no">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta charset="UTF-8">
+		<meta name="theme-color" content="#4285f4">
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+		<link rel="stylesheet" href="css/chartist.min.css">
+		<link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href="css/tingle.min.css">
+		<title>Striped</title>
+	</head>
+	<body onload="onLoad()">
+		<div class='header'>
+			<h1 onclick="updateList()">Striped</h1>
+			<img onclick="openSettings()" src='img/settings.png'/>
+		
+
+			<p>Last <select id='timeperiod' onchange='updateTimeperiod()'>
+				<option value="7">7 days</option>
+				<option value="15">15 days</option>
+				<option value="30">30 days</option>
+			</select> earnings: $<span id='earnings'></span></p>
+			
+			<div id="wrapper" style="position: relative; height: 100px">
+				<canvas id="myChart"></canvas>
+			</div>
+		</div>
+		
+		<div id="ptr">
+		  <!-- Pull down arrow indicator -->
+		  <span class="genericon genericon-next"></span>
+
+		  <!-- CSS-based loading indicator -->
+		  <div class="loading">
+			<span id="l1"></span>
+			<span id="l2"></span>
+			<span id="l3"></span>
+		  </div>
+		</div>
+
+		<div class='hide' id="spinner">
+			<div class="double-bounce1"></div>
+			<div class="double-bounce2"></div>
+		</div>
+
+		<div id='listTransaction'>
+			
+		</div>
+
+		<script src="cordova.js"></script>
+		<script src="js/tingle.min.js"></script>
+		<script src="js/pulltorefresh.js"></script>
+		<script src="js/moment.min.js"></script>
+		<script src="js/Chart.min.js"></script>
+		<script src="js/index.js"></script>
+	</body>
+</html>
